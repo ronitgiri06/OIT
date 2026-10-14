@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* ===== NAVBAR CONTAINER ===== */
+/* ===== NAVBAR ===== */
 nav {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
@@ -52,7 +52,7 @@ nav {
 }
 
 .institute:hover .logo {
-  transform: rotate(-5deg) scale(1.05);
+  transform: scale(1);
   box-shadow: 0 6px 25px rgba(0, 20, 80, 0.4);
 }
 
@@ -185,7 +185,6 @@ nav ul li a:hover::before {
   color: white !important;
 }
 
-/* HIDE PHONE NUMBER TEXT ON DESKTOP */
 .phone-text {
   display: none !important;
 }
@@ -206,7 +205,6 @@ nav ul li a:hover::before {
   display: none !important;
 }
 
-/* ===== HIDE SCROLLBARS ===== */
 nav::-webkit-scrollbar,
 nav *::-webkit-scrollbar {
   display: none !important;
@@ -220,9 +218,7 @@ nav * {
   scrollbar-width: none !important;
 }
 
-/* ============================================ */
-/* ===== RESPONSIVE DESIGN ===== */
-/* ============================================ */
+/* ===== RESPONSIVE ===== */
 
 /* Tablet View */
 @media screen and (max-width: 1024px) {
@@ -259,7 +255,7 @@ nav * {
   }
 }
 
-/* Mobile View - Show Phone Number */
+/* Mobile View  */
 @media screen and (max-width: 850px) {
   nav {
     padding: 0.5rem 1.2rem;
@@ -290,7 +286,6 @@ nav * {
     gap: 0.7rem;
   }
 
-  /* Wrap navigation to next line if needed */
   nav ul {
     justify-content: center;
     gap: 0.3rem;
@@ -302,7 +297,6 @@ nav * {
     font-size: 0.85rem;
   }
 
-  /* SHOW PHONE NUMBER TEXT ON MOBILE */
   .phone-text {
     display: inline !important;
     color: white !important;

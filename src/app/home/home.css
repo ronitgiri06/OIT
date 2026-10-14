@@ -5,9 +5,7 @@
   box-sizing: border-box;
 }
 
-/* ============================================ */
 /* ===== ANIMATIONS ===== */
-/* ============================================ */
 
 @keyframes slideDown {
   from {
@@ -75,7 +73,6 @@
   }
 }
 
-/* Animation Classes */
 .animate-slide-down {
   animation: slideDown 0.8s ease forwards;
 }
@@ -98,14 +95,12 @@
   opacity: 0;
 }
 
-/* Scroll Animation */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
   animation: slideUp 0.6s ease forwards;
 }
 
-/* Stagger children */
 .cards .animate-on-scroll:nth-child(1) { animation-delay: 0.1s; }
 .cards .animate-on-scroll:nth-child(2) { animation-delay: 0.2s; }
 .cards .animate-on-scroll:nth-child(3) { animation-delay: 0.3s; }
@@ -122,9 +117,7 @@
 .reviews-grid .animate-on-scroll:nth-child(3) { animation-delay: 0.3s; }
 .reviews-grid .animate-on-scroll:nth-child(4) { animation-delay: 0.4s; }
 
-/* ============================================ */
 /* ===== HERO SECTION ===== */
-/* ============================================ */
 
 .hero {
   min-height: 100vh;
@@ -283,10 +276,7 @@
   border-radius: 2px;
   flex-shrink: 0;
 }
-
-/* ============================================ */
 /* ===== SECTION HEADERS ===== */
-/* ============================================ */
 
 .section-tag {
   font-family: 'Inter', sans-serif;
@@ -307,9 +297,7 @@
   line-height: 1.2;
 }
 
-/* ============================================ */
 /* ===== FEATURES SECTION ===== */
-/* ============================================ */
 
 .features-section {
   padding: 5rem 6rem;
@@ -378,9 +366,7 @@
   line-height: 1.6;
 }
 
-/* ============================================ */
 /* ===== COURSES SECTION ===== */
-/* ============================================ */
 
 .courses-section {
   padding: 5rem 6rem;
@@ -494,9 +480,7 @@
   color: #002b7a;
 }
 
-/* ============================================ */
 /* ===== REVIEWS SECTION ===== */
-/* ============================================ */
 
 .reviews-section {
   padding: 5rem 6rem;
@@ -562,9 +546,7 @@
   color: #001a4d;
 }
 
-/* ============================================ */
-/* ===== CONTACT BOX SECTION ===== */
-/* ============================================ */
+/* ===== CONTACT BOX ===== */
 
 .contact-box-section {
   padding: 5rem 6rem;
@@ -712,9 +694,7 @@
   flex-wrap: wrap;
 }
 
-/* ============================================ */
 /* ===== FOOTER ===== */
-/* ============================================ */
 
 footer {
   background: #0a0a1a;
@@ -798,9 +778,7 @@ footer {
   opacity: 0.5;
 }
 
-/* ============================================ */
 /* ===== RESPONSIVE ===== */
-/* ============================================ */
 
 @media screen and (max-width: 1024px) {
   .hero {

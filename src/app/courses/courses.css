@@ -1,6 +1,4 @@
-/* ============================================ */
 /* ===== RESET & BASE ===== */
-/* ============================================ */
 
 * {
   margin: 0;
@@ -8,9 +6,7 @@
   box-sizing: border-box;
 }
 
-/* ============================================ */
 /* ===== ANIMATIONS ===== */
-/* ============================================ */
 
 /* Slide Up Animation */
 @keyframes slideUp {
@@ -94,9 +90,7 @@
   }
 }
 
-/* ============================================ */
 /* ===== ANIMATION CLASSES ===== */
-/* ============================================ */
 
 .animate-slide-up {
   animation: slideUp 0.8s ease forwards;
@@ -142,9 +136,7 @@
 .courses-grid .animate-on-scroll:nth-child(5) { transition-delay: 0.5s; }
 .courses-grid .animate-on-scroll:nth-child(6) { transition-delay: 0.6s; }
 
-/* ============================================ */
 /* ===== COURSES HERO ===== */
-/* ============================================ */
 
 .courses-hero {
   min-height: 50vh;
@@ -227,9 +219,7 @@
   opacity: 0;
 }
 
-/* ============================================ */
 /* ===== SECTION TAG ===== */
-/* ============================================ */
 
 .section-tag {
   font-family: 'Inter', sans-serif;
@@ -242,9 +232,7 @@
   margin-bottom: 0.5rem;
 }
 
-/* ============================================ */
 /* ===== COURSES GRID ===== */
-/* ============================================ */
 
 .courses-section {
   padding: 5rem 6rem;
@@ -259,9 +247,7 @@
   margin: 0 auto;
 }
 
-/* ============================================ */
 /* ===== COURSE CARD ===== */
-/* ============================================ */
 
 .course-card {
   background: white;
@@ -277,7 +263,6 @@
   overflow: hidden;
 }
 
-/* Card Shimmer Effect on Hover */
 .course-card::before {
   content: '';
   position: absolute;
@@ -298,7 +283,6 @@
   left: 100%;
 }
 
-/* Card Top Border Animation */
 .course-card::after {
   content: '';
   position: absolute;
@@ -453,9 +437,7 @@
   transform: translateX(5px);
 }
 
-/* ============================================ */
 /* ===== CONTACT CARD ===== */
-/* ============================================ */
 
 .contact-card-section {
   padding: 4rem 6rem 5rem;
@@ -526,9 +508,7 @@
   flex-wrap: wrap;
 }
 
-/* ============================================ */
 /* ===== BUTTONS ===== */
-/* ============================================ */
 
 .btn-primary {
   display: inline-flex;
@@ -628,9 +608,7 @@
   transform: scale(0.95);
 }
 
-/* ============================================ */
 /* ===== RESPONSIVE ===== */
-/* ============================================ */
 
 @media screen and (max-width: 1024px) {
   .courses-hero-overlay {
