@@ -1,0 +1,24 @@
+<nav>
+  <div class="institute" routerLink="/">
+    <div class="logo">
+      <!-- Removed /public/ from the path -->
+      <img src="logo.jpg" alt="Om Institute Logo">
+    </div>
+    <div class="name">
+      <h2>Om institute of technology</h2>
+      <p>Laxmi nagar, Delhi</p>
+    </div>
+  </div>
+
+  <ul>
+    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+    <li><a routerLink="/courses" routerLinkActive="active">Course</a></li>
+    <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+    <li><a routerLink="/contacts" routerLinkActive="active">Contact</a></li>
+    <li class="phone-item">
+      <a href="tel:09990232743" class="phone-btn">
+        <i class="fas fa-phone"></i>
+      </a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,743 @@
+/* ============================================ */
+/* ===== RESET & BASE ===== */
+/* ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============================================ */
+/* ===== ANIMATIONS ===== */
+/* ============================================ */
+
+/* Slide Up Animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide Down Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scale In Animation */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Float Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* ============================================ */
+/* ===== ANIMATION CLASSES ===== */
+/* ============================================ */
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.8s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.8s ease forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Scroll Animation - triggers when element comes into view */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children delays */
+.courses-grid .animate-on-scroll:nth-child(1) { transition-delay: 0.1s; }
+.courses-grid .animate-on-scroll:nth-child(2) { transition-delay: 0.2s; }
+.courses-grid .animate-on-scroll:nth-child(3) { transition-delay: 0.3s; }
+.courses-grid .animate-on-scroll:nth-child(4) { transition-delay: 0.4s; }
+.courses-grid .animate-on-scroll:nth-child(5) { transition-delay: 0.5s; }
+.courses-grid .animate-on-scroll:nth-child(6) { transition-delay: 0.6s; }
+
+/* ============================================ */
+/* ===== COURSES HERO ===== */
+/* ============================================ */
+
+.courses-hero {
+  min-height: 50vh;
+  background: linear-gradient(135deg, #001a4d 0%, #002b7a 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Hero Background Animation */
+.courses-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
+  animation: float 8s ease-in-out infinite;
+  z-index: 0;
+}
+
+.courses-hero::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 70% 50%, rgba(255, 193, 7, 0.03) 0%, transparent 60%);
+  animation: float 10s ease-in-out infinite reverse;
+  z-index: 0;
+}
+
+.courses-hero-overlay {
+  width: 100%;
+  padding: 4rem 6rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.courses-hero-content {
+  max-width: 800px;
+  color: white;
+}
+
+.courses-hero-content .section-tag {
+  color: #ffc107;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  display: block;
+  margin-bottom: 0.5rem;
+  animation: slideDown 0.8s ease forwards;
+}
+
+.courses-hero-content h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: white;
+  animation: slideUp 0.8s ease 0.3s forwards;
+  opacity: 0;
+}
+
+.courses-hero-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  animation: fadeIn 1s ease 0.6s forwards;
+  opacity: 0;
+}
+
+/* ============================================ */
+/* ===== SECTION TAG ===== */
+/* ============================================ */
+
+.section-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffc107;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================ */
+/* ===== COURSES GRID ===== */
+/* ============================================ */
+
+.courses-section {
+  padding: 5rem 6rem;
+  background: #f8faff;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ============================================ */
+/* ===== COURSE CARD ===== */
+/* ============================================ */
+
+.course-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 26, 77, 0.06);
+  border: 1px solid rgba(0, 26, 77, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card Shimmer Effect on Hover */
+.course-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.course-card:hover::before {
+  left: 100%;
+}
+
+/* Card Top Border Animation */
+.course-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #001a4d, #ffc107, #001a4d);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.course-card:hover::after {
+  opacity: 1;
+}
+
+.course-card:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 20px 60px rgba(0, 26, 77, 0.15);
+  border-color: rgba(0, 26, 77, 0.1);
+}
+
+.course-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #001a4d, #002b7a);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  align-self: flex-start;
+  transition: all 0.3s ease;
+}
+
+.course-card:hover .course-badge {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 26, 77, 0.3);
+}
+
+.course-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #001a4d;
+  margin-bottom: 0.8rem;
+  transition: color 0.3s ease;
+}
+
+.course-card:hover h3 {
+  color: #002b7a;
+}
+
+.course-summary {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #4a5a7a;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* ===== SKILLS SECTION ===== */
+
+.skills-section {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 26, 77, 0.06);
+}
+
+.skills-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4a5a7a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(0, 26, 77, 0.05);
+  color: #001a4d;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-tag i {
+  color: #ffc107;
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: linear-gradient(135deg, #001a4d, #002b7a);
+  color: white;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 26, 77, 0.2);
+}
+
+.skill-tag:hover i {
+  color: white;
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* ===== COURSE LINK ===== */
+
+.course-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  color: #001a4d;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 26, 77, 0.06);
+}
+
+.course-link i {
+  transition: transform 0.3s ease;
+}
+
+.course-link:hover {
+  gap: 0.8rem;
+  color: #002b7a;
+}
+
+.course-link:hover i {
+  transform: translateX(5px);
+}
+
+/* ============================================ */
+/* ===== CONTACT CARD ===== */
+/* ============================================ */
+
+.contact-card-section {
+  padding: 4rem 6rem 5rem;
+  background: linear-gradient(135deg, #f8faff, #eef1ff);
+}
+
+.contact-card {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 10px 50px rgba(0, 26, 77, 0.1);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+/* Contact Card Glow Effect */
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 193, 7, 0.03) 0%, transparent 60%);
+  animation: float 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.contact-card:hover {
+  box-shadow: 0 20px 70px rgba(0, 26, 77, 0.2);
+  transform: translateY(-5px);
+}
+
+.contact-card-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  padding: 3rem 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-card-left h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #001a4d;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.contact-card:hover .contact-card-left h3 {
+  color: #002b7a;
+}
+
+.contact-card-left p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #4a5a7a;
+  line-height: 1.7;
+}
+
+.contact-card-right {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+/* ============================================ */
+/* ===== BUTTONS ===== */
+/* ============================================ */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, #001a4d, #002b7a);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 26, 77, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button Shimmer Effect */
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 35px rgba(0, 26, 77, 0.5);
+  background: linear-gradient(135deg, #002b7a, #003a9e);
+}
+
+.btn-primary:active {
+  transform: scale(0.95);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(0, 26, 77, 0.06);
+  color: #001a4d;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid rgba(0, 26, 77, 0.1);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #001a4d, #002b7a);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.btn-secondary:hover {
+  color: white;
+  transform: translateY(-3px);
+  border-color: transparent;
+  box-shadow: 0 8px 35px rgba(0, 26, 77, 0.2);
+}
+
+.btn-secondary:hover::before {
+  opacity: 1;
+}
+
+.btn-secondary:active {
+  transform: scale(0.95);
+}
+
+/* ============================================ */
+/* ===== RESPONSIVE ===== */
+/* ============================================ */
+
+@media screen and (max-width: 1024px) {
+  .courses-hero-overlay {
+    padding: 4rem;
+  }
+
+  .courses-section {
+    padding: 4rem;
+  }
+
+  .contact-card-section {
+    padding: 3rem 4rem 4rem;
+  }
+
+  .contact-card-content {
+    padding: 2.5rem 3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .courses-hero {
+    min-height: 40vh;
+  }
+
+  .courses-hero-overlay {
+    padding: 3rem 2rem;
+  }
+
+  .courses-hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .courses-hero-content p {
+    font-size: 1rem;
+  }
+
+  .courses-section {
+    padding: 3rem 2rem;
+  }
+
+  .courses-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .contact-card-section {
+    padding: 2rem 2rem 3rem;
+  }
+
+  .contact-card-content {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .contact-card-right {
+    justify-content: center;
+  }
+
+  .contact-card-left h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .courses-hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .courses-hero-overlay {
+    padding: 2rem 1.5rem;
+  }
+
+  .courses-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .course-card {
+    padding: 1.5rem;
+  }
+
+  .course-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .contact-card-content {
+    padding: 1.5rem;
+  }
+
+  .contact-card-right {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .contact-card-right .btn-primary,
+  .contact-card-right .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .skills-list {
+    gap: 0.3rem;
+  }
+
+  .skill-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+}

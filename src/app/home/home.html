@@ -1,0 +1,207 @@
+<!-- ===== HERO SECTION ===== -->
+<section class="hero" [class.hero-visible]="isHeroVisible">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <div class="rating-badge animate-slide-down">
+        <i class="fas fa-star"></i>
+        <span>4.8</span>
+        <span class="dot">·</span>
+        <span>40 Google reviews</span>
+      </div>
+      <h1 class="animate-slide-up">Concepts explained until they finally click.</h1>
+      
+      <p class="hero-description animate-fade-in">
+        Om Institute Of Technology is a Laxmi Nagar coaching centre for BCA, MCA and engineering students. 
+        Small batches, patient mentors, and doubt-solving that continues well past class hours.
+      </p>
+
+      <div class="hero-buttons animate-slide-up-delay">
+        <a href="tel:09990232743" class="btn-primary">
+          <i class="fas fa-phone"></i> Call us
+        </a>
+        <button routerLink="/courses" class="btn-secondary">
+          Browse Courses <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <div class="hero-stats animate-fade-in-delay">
+  <div class="stat-item">
+    <i class="fas fa-star"></i>
+    <span>4.8 Rating Average</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <i class="fas fa-user-graduate"></i>
+    <span>40+ Student reviews</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <i class="fas fa-clock"></i>
+    <span>9–8 Open every day</span>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURES SECTION ===== -->
+<section class="features-section">
+  <div class="section-header">
+    <span class="section-tag">Why Students Choose Us</span>
+    <h2 class="section-title">Teaching that is patient, structured and genuinely available.</h2>
+  </div>
+
+  <div class="cards">
+    @for (comment of comments; track comment.comment) {
+      <div class="card animate-on-scroll">
+        <div class="card-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="card-content">
+          <h3>{{ comment.comment }}</h3>
+          <p>{{ comment.brief }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- ===== COURSES SECTION ===== -->
+<section class="courses-section">
+  <div class="courses-header">
+    <div class="courses-left">
+      <span class="section-tag">Courses</span>
+      <h2>What we teach</h2>
+    </div>
+    <div class="courses-right">
+      <button routerLink="/courses" class="btn-outline">
+        All Courses <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="courses-grid">
+    @for (course of courses; track course.name) {
+      <div class="course-card animate-on-scroll">
+        <span class="course-badge">{{ course.type }}</span>
+        <h3>{{ course.name }}</h3>
+        <p>{{ course.description }}</p>
+        <a routerLink="/courses" class="course-link">
+          Learn More <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- ===== REVIEWS SECTION ===== -->
+<section class="reviews-section">
+  <div class="reviews-header">
+    <span class="section-tag"><i class="fas fa-star"></i> In their words</span>
+    <h2>4.8 out of 5, across 40 reviews</h2>
+  </div>
+
+  <div class="reviews-grid">
+    @for (review of reviews; track review.name) {
+      <div class="review-card animate-on-scroll">
+        <div class="star-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="review-text">{{ review.review }}</p>
+        <p class="review-author">— {{ review.name }}</p>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- ===== CONTACT BOX ===== -->
+<section class="contact-box-section">
+  <div class="contact-box animate-on-scroll">
+    <div class="contact-box-content">
+      <div class="contact-box-left">
+        <span class="section-tag" style="color: #ffc107;">Get in Touch</span>
+        <h2>Visit the institute this week</h2>
+        <p>Walk in for a free counselling session, meet the faculty and sit through a demo class before you decide.</p>
+        <div class="contact-buttons">
+          <a href="tel:09990232743" class="btn-primary">
+            <i class="fas fa-phone"></i> Call now
+          </a>
+          <button routerLink="/contacts" class="btn-secondary">
+            Contact & directions <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+      <div class="contact-box-right">
+        <div class="contact-info-card">
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <i class="fas fa-location-dot"></i>
+            </div>
+            <div>
+              <h4>Address</h4>
+              <p>3rd Floor, D-30, Siddhartha Complex, Office No. 302, Laxmi Nagar, Delhi 110092</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div>
+              <h4>Working Hours</h4>
+              <p>Open daily, 9:00 am – 8:00 pm</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div>
+              <h4>Phone</h4>
+              <p><a href="tel:09990232743">099902 32743</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <h3>Om Institute Of Technology Pvt. Ltd.</h3>
+      <p class="hindi-name">ओम इंस्टीट्यूट ऑफ टेक्नोलॉजी पीवीटी. एलटीडी.</p>
+      <p class="footer-description">
+        A Laxmi Nagar coaching centre for BCA, MCA and engineering students — rated 4.8 by 40 learners.
+      </p>
+    </div>
+
+    <div class="footer-contact">
+      <div class="footer-detail">
+        <i class="fas fa-location-dot"></i>
+        <span>3rd Floor, D-30, Siddhartha Complex, Office No. 302, Laxmi Nagar, Delhi 110092</span>
+      </div>
+      <div class="footer-detail">
+        <i class="fas fa-clock"></i>
+        <span>Open daily, 9:00 am – 8:00 pm</span>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <a routerLink="/courses">Courses</a>
+      <a routerLink="/about">About the institute</a>
+      <a routerLink="/contacts">Visit and enquiry</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2024 Om Institute Of Technology. All rights reserved.</p>
+  </div>
+</footer>
+<!-- Add this temporarily to check if image exists -->
+<img src="/public/heroimage.png" alt="Test" style="display:none;" (error)="isHeroVisible = false" (load)="isHeroVisible = true">

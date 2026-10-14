@@ -1,0 +1,56 @@
+<!-- ===== HERO SECTION ===== -->
+<section class="courses-hero">
+  <div class="courses-hero-overlay">
+    <div class="courses-hero-content">
+      <span class="section-tag">Courses</span>
+      <h1>Batches built around the university syllabus — and around real code.</h1>
+      <p>Every course runs in small batches with regular tests, notes and doubt sessions. Timings are flexible across morning and evening slots between 9 am and 8 pm.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COURSES GRID ===== -->
+<section class="courses-section">
+  <div class="courses-grid">
+    @for (course of courses; track course.name) {
+      <div class="course-card">
+        <span class="course-badge">{{ course.type }}</span>
+        <h3>{{ course.name }}</h3>
+        <p class="course-summary">{{ course.summary }}</p>
+        <div class="skills-section">
+          <span class="skills-label">What you'll learn:</span>
+          <div class="skills-list">
+            @for (skill of course.skills; track skill) {
+              <span class="skill-tag">
+                <i class="fas fa-check-circle"></i> {{ skill }}
+              </span>
+            }
+          </div>
+        </div>
+        <a routerLink="/contacts" class="course-link">
+          Enquire Now <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- ===== CONTACT CARD ===== -->
+<section class="contact-card-section">
+  <div class="contact-card">
+    <div class="contact-card-content">
+      <div class="contact-card-left">
+        <h3>Not sure which batch fits you?</h3>
+        <p>Tell us your course, semester and university — we'll suggest the right batch and timing.</p>
+      </div>
+      <div class="contact-card-right">
+        <a href="tel:09990232743" class="btn-primary">
+          <i class="fas fa-phone"></i> Call us
+        </a>
+        <a href="mailto:info@ominstitute.edu" class="btn-secondary">
+          <i class="fas fa-envelope"></i> Email us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
