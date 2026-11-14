@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "dist/oit"
+  publish = "dist/oit/browser"
 
 [[redirects]]
   from = "/*"
